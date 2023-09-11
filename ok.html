@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>โปรแกรมสุ่มการ์ดรูปสี่เหลี่ยมคางหมู</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+<body>
+  <div class="main-container">
+        <h1 id="main">RANDOM MATH</h1>
+        <article class="board">
+  <div class="card-container">
+    <div class="card" id="card1">
+        <div class="front">หงาย</div>
+        <div class="back">คว่ำ</div>
+    </div>
+    <div class="card" id="card2">
+        <div class="front">หงาย</div>
+        <div class="back">คว่ำ</div>
+    </div>
+    
+</div>
+<div id="result"></div>
+<button id="shuffleButton">Shuffle Cards</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const card1 = document.getElementById("card1");
+    const card2 = document.getElementById("card2");
+    const resultDiv = document.getElementById("result");
+    const shuffleButton = document.getElementById("shuffleButton");
+
+    shuffleButton.addEventListener("click", function() {
+        const isCard1Flipped = Math.random() < 0.5;
+        const isCard2Flipped = Math.random() < 0.5;
+
+        if (isCard1Flipped) {
+            card1.classList.add("flipped");
+            setTimeout(() => card1.classList.remove("flipped"), 1000);
+        }
+
+        if (isCard2Flipped) {
+            card2.classList.add("flipped");
+            setTimeout(() => card2.classList.remove("flipped"), 1000);
+        }
+
+        if (isCard1Flipped && isCard2Flipped) {
+            resultDiv.textContent = "คุณกำลังจะโชคดี";
+        } else if (!isCard1Flipped && !isCard2Flipped) {
+            resultDiv.textContent = "คุณกำลังจะรวย";
+        } else {
+            resultDiv.textContent = "ช่วงนี้ดวงคุณไม่ค่อยดีเลย";
+        }
+    });
+});
+
+  </script>
+</body>
+</html>
