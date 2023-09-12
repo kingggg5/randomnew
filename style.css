@@ -33,7 +33,8 @@
   body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  
+    background-image: linear-gradient(to right top, #f2f2f2, #efe7f0, #f4dae6, #facdd2, #fbc2b7, #f1b8a3, #e4ae90, #d6a67d, #c79670, #b78762, #a87856, #996949);
   }
 .card-container {
     perspective: 1000px;
@@ -145,6 +146,4 @@ touch-action: manipulation;
       min-width: 120px;
       padding: 0 25px;
     }  
-
-background-image: linear-gradient(to right top, #f2f2f2, #efe7f0, #f4dae6, #facdd2, #fbc2b7, #f1b8a3, #e4ae90, #d6a67d, #c79670, #b78762, #a87856, #996949);
   
